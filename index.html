@@ -22,19 +22,26 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <h1 class="display-3 text-center d-">Magic 8-Ball</h1>
-
-    <br>
-    <hr>
-    <img src="" alt="">
-    <br>
-    <hr>
-    <br>
-    <Form>
-      <input name="question" type="text" placeholder="Ask me anything!">
-      <submit>
-        <button type="submit" class="btn btn-outline-secondary">Ask</button>
-      </submit>
-    </Form>
+<div class="main-container container-fluid">
+  <h1 class="display-3 text-center m-3">Magic 8-Ball</h1>
+  <br>
+  <h2 class="display-6 text-center fs-4 mb-5">Ask a Yes or No question</h2>
+  <hr>
+      <div id="displayBox" name="displayBox" style="height: 30px; font-style: italic;" class="mx-auto text-center flex-row"></div>
+      <div id="answers" class="d-flex flex-row justify-content-center align-items-center"></div>
+      <!-- <img style="width: 400px;" src="" alt=""> -->
+      <Form class="row container-fluid">
+        <div class="col-12 col-md-6">
+          <input id="question" name="question" type="text" placeholder="Ask me something, peasant..." class="m-3 form-control">
+        </div>
+        <div class="col-12 col-md-3">
+          <input name="submit" type="submit" value="Beg for answer" class="btn btn-outline-secondary m-3 form-control">
+        </div>
+        <div class="col-12 col-md-3">
+          <input id="reset" name="reset" type="reset" class="btn btn-outline-secondary m-3 form-control" value="Start over">
+        </div>
+      </Form>
+      <hr>
+    </div>
   </body>
 </html>
