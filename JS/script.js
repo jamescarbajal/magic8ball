@@ -7,6 +7,7 @@ function shake(){
     const img = document.querySelector('img');
     img.src = './IMG/magic8ball_extra.png';
     const rando = Math.floor(Math.random() * 20);
+    img.src = './IMG/magic8ball_extra.png';
     img.src = './IMG/magic8ball_' + (rando + 1) + '.png';
 }
 
@@ -24,6 +25,7 @@ form.addEventListener("submit", function(event){
     displayQuestion();
     form.reset();
 });
+
 form.addEventListener("reset", function(event){
     event.preventDefault();
    location.reload(true); 
