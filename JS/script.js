@@ -11,22 +11,29 @@ function shake(){
     img.src = './IMG/magic8ball_' + (rando + 1) + '.png';
 }
 
-function displayQuestion(){
-    const question = document.getElementById('question').value;
-    console.log(question);
-    const displayBox = document.getElementById('displayBox');
-    displayBox.innerHTML = question;
-}
-
 const form = document.querySelector("form");
+let currentQuestion = document.getElementById('question');
+let prevQuestion = localStorage.getItem('prevQuestion') || 0;
+let displayBox = document.getElementById('displayBox');
+
 form.addEventListener("submit", function(event){
     event.preventDefault();
+    if (currentQuestion.value == "") {
+        displayBox.innerHTML = "You didn't even ask a question!";
+    }
+    else if (currentQuestion.value === localStorage.getItem('prevQuestion')) {
+        displayBox.innerHTML = "You already asked that question, you fool!";
+        currentQuestion.innerHTML = "";
+    } 
+    else {
     shake();
-    displayQuestion();
-    form.reset();
+    displayBox.innerHTML = currentQuestion.value;
+    localStorage.setItem('prevQuestion', currentQuestion.value);
+    }
 });
 
 form.addEventListener("reset", function(event){
     event.preventDefault();
-   location.reload(true); 
+    location.reload(true);
+    localStorage.clear();
 });
